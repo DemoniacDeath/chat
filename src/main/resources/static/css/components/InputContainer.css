@@ -1,0 +1,9 @@
+/** START INPUT**/
+#input-container {
+    max-height: 62px;
+}
+
+#message-input {
+    resize: none;
+}
+/** END INPUT**/

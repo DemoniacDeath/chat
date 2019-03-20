@@ -1,0 +1,21 @@
+<div id="input-container">
+    <div class="input-group">
+        <textarea
+                id="message-input"
+                name="message"
+                class="form-control"
+                aria-label="Input"
+                aria-describedby="send-button"
+                v-model="message"
+                @keyup.enter="enterPressed"
+        ></textarea>
+        <div class="input-group-append">
+            <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="send-button"
+                    @click="sendMessage()"
+            >Send</button>
+        </div>
+    </div>
+</div>

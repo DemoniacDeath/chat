@@ -1,0 +1,14 @@
+<div id="dialog-container">
+    <div v-for="message in messages"
+         class="message rounded-lg"
+         :class="message.isIncoming ? 'message-incoming' : 'message-outgoing'">
+        <div class="message-author-container">
+            From:
+            <span class="message-author">{{ message.from }}</span>
+        </div>
+        <div class="message-content">
+            {{ message.body }}
+        </div>
+        <div class="message-timestamp">{{ message.timestamp | fromNow }}</div>
+    </div>
+</div>

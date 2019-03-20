@@ -1,0 +1,14 @@
+/** START HEADER **/
+#header-container {
+    min-height: 50px;
+    max-height: 50px;
+}
+
+#title {
+    background-color: #fff3cd;
+    color: #0b2e13;
+    padding: 10px;
+    text-align: center;
+    height: 100%;
+}
+/** END HEADER **/

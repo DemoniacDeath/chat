@@ -1,0 +1,49 @@
+/*** START DIALOG ***/
+#dialog-container {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.message {
+    min-height: 50px;
+    clear: both;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.message-incoming {
+    background-color: #7abaff;
+    float: right;
+}
+
+.message-outgoing {
+    background-color: #b1dfbb;
+    float: left;
+}
+
+.message-author-container {
+    font-size: smaller;
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.message-incoming .message-author-container {
+    color: #105252;
+}
+
+.message-outgoing .message-author-container {
+    color: #275215;
+}
+
+.message-author {
+    font-weight: bold;
+}
+
+.message-timestamp {
+    margin-top: 10px;
+    font-size: smaller;
+    text-align: right;
+}
+
+/*** END DIALOG ***/
