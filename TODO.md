@@ -2,6 +2,7 @@ This whole thing is just for educational purposes so whatevs...
 
 TODOs:
 
+1. fix layout for firefox
 1. make time interval for moment.js reload longer
 1. move js libraries into external dependencies
 1. maybe use some kind of JS building system?
