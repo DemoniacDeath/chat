@@ -5,10 +5,11 @@ define(['vue', 'text!templates/components/SidebarContainer.html'
 ], function (Vue, template) {
     Vue.component('SidebarContainer', {
         template: template,
-        data: function () {
-            return {
-                handler: 'DemoniacDeath'
-            };
+        props: {
+            user: {
+                type: Object,
+                required: true
+            }
         }
     })
 });

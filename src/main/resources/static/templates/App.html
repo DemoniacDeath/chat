@@ -1,10 +1,17 @@
 <div id="root-container">
     <div id="content-container">
-        <SidebarContainer></SidebarContainer>
+        <SidebarContainer
+                :user="user"
+        ></SidebarContainer>
         <div id="main-window-container">
             <HeaderContainer title="General chat room"></HeaderContainer>
-            <DialogContainer></DialogContainer>
+            <DialogContainer
+                    :currentUserId="currentUserId"
+                    :usersRegistry="usersRegistry"
+            ></DialogContainer>
         </div>
     </div>
-    <InputContainer></InputContainer>
+    <InputContainer
+            :currentUserId="currentUserId"
+    ></InputContainer>
 </div>

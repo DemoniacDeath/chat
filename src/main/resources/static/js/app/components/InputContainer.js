@@ -1,8 +1,15 @@
 define(['vue', 'text!templates/components/InputContainer.html'
     , 'app/EventBus'
-], function (Vue, template, EventBus) {
+    , 'app/model/DialogMessage'
+], function (Vue, template, EventBus, DialogMessage) {
     Vue.component('InputContainer', {
         template: template,
+        props: {
+            currentUserId: {
+                type: String,
+                required: true
+            }
+        },
         data: function () {
             return {
                 message: null
@@ -26,12 +33,7 @@ define(['vue', 'text!templates/components/InputContainer.html'
                     this.message = null;
                     return;
                 }
-                var message = {
-                    body: this.message,
-                    timestamp: new Date().getTime(),
-                    isIncoming: false,
-                    from: "You"
-                };
+                var message = new DialogMessage(this.message, this.currentUserId);
                 this.message = null;
                 EventBus.$emit('message-was-sent', message);
             }

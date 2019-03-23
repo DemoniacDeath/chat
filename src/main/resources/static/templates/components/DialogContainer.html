@@ -1,10 +1,10 @@
 <div id="dialog-container">
     <div v-for="message in messages"
          class="message rounded-lg"
-         :class="message.isIncoming ? 'message-incoming' : 'message-outgoing'">
+         :class="message.fromUserId === currentUserId ? 'message-incoming' : 'message-outgoing'">
         <div class="message-author-container">
             From:
-            <span class="message-author">{{ message.from }}</span>
+            <span class="message-author">{{ usersRegistry.getUser(message.fromUserId).handler }}</span>
         </div>
         <div class="message-content">
             {{ message.body }}
