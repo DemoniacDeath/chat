@@ -3,6 +3,7 @@ define(['vue', 'text!templates/components/DialogContainer.html'
     , 'app/EventBus'
     , 'app/model/DialogMessage'
     , 'app/model/UsersRegistry'
+    , 'css!styles/components/DialogContainer.css'
 ], function (Vue, template, moment, EventBus, DialogMessage, UsersRegistry) {
     Vue.component('DialogContainer', {
         template: template,

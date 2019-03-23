@@ -2,7 +2,8 @@
 
 require.config({
     paths: {
-        "templates": "../templates"
+        "templates": "../templates",
+        "styles": "../css"
     }
 });
 

@@ -1,6 +1,7 @@
 define(['vue', 'text!templates/components/InputContainer.html'
     , 'app/EventBus'
     , 'app/model/DialogMessage'
+    , 'css!styles/components/InputContainer.css'
 ], function (Vue, template, EventBus, DialogMessage) {
     Vue.component('InputContainer', {
         template: template,

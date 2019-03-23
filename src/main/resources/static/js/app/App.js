@@ -7,6 +7,8 @@ define(['vue', 'text!templates/App.html'
     , 'app/components/DialogContainer'
     , 'app/components/SidebarContainer'
     , 'app/services/ChatService'
+    , 'css!styles/main.css'
+    , 'css!styles/App.css'
 ], function (Vue, appTemplate, uuid, User, UsersRegistry) {
     var user = new User(uuid(), "DemoniacDeath");
     var usersRegistry = new UsersRegistry();
