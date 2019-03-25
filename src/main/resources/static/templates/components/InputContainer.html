@@ -7,7 +7,7 @@
                 aria-label="Input"
                 aria-describedby="send-button"
                 v-model="message"
-                @keyup.enter="enterPressed"
+                @keydown.enter.exact.prevent="sendMessage"
         ></textarea>
         <div class="input-group-append">
             <button

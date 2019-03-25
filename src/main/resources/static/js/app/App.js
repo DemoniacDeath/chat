@@ -1,5 +1,6 @@
 define(['vue', 'text!templates/App.html'
-    , 'http://wzrd.in/standalone/uuid%2Fv4@latest'
+    , 'app/EventBus'
+    , 'node-uuid'
     , 'app/model/User'
     , 'app/model/UsersRegistry'
     , 'app/components/HeaderContainer'
@@ -9,10 +10,16 @@ define(['vue', 'text!templates/App.html'
     , 'app/services/ChatService'
     , 'css!styles/main.css'
     , 'css!styles/App.css'
-], function (Vue, appTemplate, uuid, User, UsersRegistry) {
-    var user = new User(uuid(), "DemoniacDeath");
+], function (Vue, appTemplate, EventBus, uuid, User, UsersRegistry) {
+    var user = new User(uuid.v4(), "Guest");
     var usersRegistry = new UsersRegistry();
+
+    var systemUser = new User("", "System Info");
     usersRegistry.addUser(user);
+    usersRegistry.addUser(systemUser);
+    EventBus.$on('socket-connected', function() {
+        EventBus.$emit('user-initialized', user);
+    });
     return new Vue({
         el: '#app-root',
         template: appTemplate,
@@ -24,6 +31,11 @@ define(['vue', 'text!templates/App.html'
             user: function() {
                 return this.usersRegistry.getUser(this.currentUserId);
             }
+        },
+        mounted: function() {
+            EventBus.$on('update-users', function (user) {
+                this.usersRegistry.addUser(user);
+            }.bind(this));
         }
     });
 });

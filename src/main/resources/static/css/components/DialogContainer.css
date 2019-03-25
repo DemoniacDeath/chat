@@ -21,6 +21,11 @@
     float: left;
 }
 
+.message-system {
+    background-color: #fff3cd;
+    float: none;
+}
+
 .message-author-container {
     font-size: smaller;
     text-align: left;
@@ -34,6 +39,14 @@
 
 .message-outgoing .message-author-container {
     color: #275215;
+}
+
+.message-system .message-author-container {
+    display: none;
+}
+
+.message-system .message-timestamp {
+    display: none;
 }
 
 .message-author {

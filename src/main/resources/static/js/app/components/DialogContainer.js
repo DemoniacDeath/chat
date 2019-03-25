@@ -19,7 +19,7 @@ define(['vue', 'text!templates/components/DialogContainer.html'
         },
         data: function () {
             return {
-                messages: [],
+                messages: [new DialogMessage("Your handler is 'Guest'. Type '/handler [new handler]' to change your handler to 'new handler'", "")],
                 interval: null
             };
         },

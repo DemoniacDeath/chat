@@ -17,15 +17,6 @@ define(['vue', 'text!templates/components/InputContainer.html'
             };
         },
         methods: {
-            enterPressed: function (event) {
-                //add logic for switching ctrl+enter behaviour
-                var shouldNewLine = !event.ctrlKey;
-                if (!shouldNewLine) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    this.sendMessage();
-                }
-            },
             sendMessage: function () {
                 if (!this.message) {
                     return;
