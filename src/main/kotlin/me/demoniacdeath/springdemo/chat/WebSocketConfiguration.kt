@@ -19,6 +19,6 @@ class WebSocketConfiguration(val handler: ConnectionHandler): WebSocketConfigure
     }
 
     override fun registerStompEndpoints(registry: StompEndpointRegistry) {
-        registry.addEndpoint("/socket").withSockJS()
+        registry.addEndpoint("/socket").setAllowedOrigins("*").withSockJS()
     }
 }
